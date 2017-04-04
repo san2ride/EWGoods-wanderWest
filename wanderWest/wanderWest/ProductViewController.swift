@@ -49,6 +49,10 @@ class ProductViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.searchProducts.delegate = self
         
     }
+    @IBAction func shopButtonPressed(_ sender: UIBarButtonItem) {
+        
+        self.performSegue(withIdentifier: "TabBarSegue", sender: nil)
+    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -206,6 +210,8 @@ extension ProductViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Failed to find user's location: \(error.localizedDescription)")
     }
+    
+    
 
    
 }
